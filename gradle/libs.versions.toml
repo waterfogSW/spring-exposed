@@ -3,6 +3,7 @@ spring-boot = "3.2.5"
 spring-dependency-management = "1.1.4"
 
 kotlin = "1.9.21"
+kotlin-coroutines = "1.8.0"
 kotlin-logging = "5.1.0"
 jackson-module-kotlin = "2.17.0"
 
@@ -10,7 +11,6 @@ mockk = "1.13.7"
 spring-mockk = "4.0.2"
 kotest = "5.6.0"
 kotest-extensions-spring = "1.1.3"
-kotest-extensions-testcontainers = "2.0.2"
 
 h2 = "2.2.224"
 
@@ -18,7 +18,7 @@ h2 = "2.2.224"
 kotlin-logging = { group = "io.github.oshai", name = "kotlin-logging-jvm", version.ref = "kotlin-logging" }
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
-kotlin-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlin" }
+kotlin-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
 jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson-module-kotlin" }
 
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
@@ -31,10 +31,11 @@ spring-boot-starter-thymeleaf = { module = "org.springframework.boot:spring-boot
 spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot" }
 spring-boot-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "spring-boot" }
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring-boot" }
-spring-boot-starter-exposed = { module = "org.jetbrains.exposed:exposed-spring-boot-starter", version = "0.49.0" }
 spring-boot-devtools = { module = "org.springframework.boot:spring-boot-devtools", version.ref = "spring-boot" }
 
 h2 = { module = "com.h2database:h2" , version.ref = "h2" }
+exposed-datetime = { module = "org.jetbrains.exposed:exposed-kotlin-datetime", version = "0.49.0" }
+exposed-spring-boot-starter = { module = "org.jetbrains.exposed:exposed-spring-boot-starter", version = "0.49.0" }
 
 [plugins]
 spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
