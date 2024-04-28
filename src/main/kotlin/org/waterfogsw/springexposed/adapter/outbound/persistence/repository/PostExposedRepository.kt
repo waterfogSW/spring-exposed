@@ -6,6 +6,7 @@ import org.waterfogsw.springexposed.adapter.outbound.persistence.table.PostExpos
 import org.waterfogsw.springexposed.adapter.outbound.persistence.table.PostTable
 import org.waterfogsw.springexposed.application.port.outbound.PostRepository
 import org.waterfogsw.springexposed.domain.Post
+import java.util.*
 
 @Repository
 class PostExposedRepository : PostRepository {
@@ -17,4 +18,13 @@ class PostExposedRepository : PostRepository {
     override fun findAll() = PostTable
         .selectAll()
         .map { PostExposedEntity.wrapRow(it).toDomain() }
+
+    override fun findById(id: UUID): Post? {
+        return PostTable
+            .selectAll()
+            .where { PostTable.id eq id }
+            .map { PostExposedEntity.wrapRow(it).toDomain() }
+            .firstOrNull()
+    }
+
 }

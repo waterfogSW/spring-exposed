@@ -20,13 +20,15 @@
     <thead>
     <tr>
       <th>제목</th>
-      <th>내용</th>
+      <th>생성일</th>
+      <th>댓글 수</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="post : ${posts}">
-      <td th:text="${post.title}"></td>
-      <td th:text="${post.contents}"></td>
+      <td><a th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.title}"></a></td>
+      <td th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd HH:mm')}"></td>
+      <td th:text="${#lists.size(post.comments)}"></td>
     </tr>
     </tbody>
   </table>
