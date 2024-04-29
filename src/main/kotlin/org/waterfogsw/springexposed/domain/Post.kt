@@ -34,6 +34,15 @@ data class Post(
         }
     }
 
+    fun update(
+        title: String,
+        contents: String,
+    ): Post = copy(
+        title = Title(title),
+        contents = Contents(contents),
+        updatedAt = LocalDateTime.now(),
+    )
+
     companion object {
 
         fun create(

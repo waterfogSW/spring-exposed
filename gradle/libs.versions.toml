@@ -35,6 +35,7 @@ spring-boot-devtools = { module = "org.springframework.boot:spring-boot-devtools
 
 h2 = { module = "com.h2database:h2" , version.ref = "h2" }
 exposed-datetime = { module = "org.jetbrains.exposed:exposed-kotlin-datetime", version = "0.49.0" }
+exposed-java-time = { module = "org.jetbrains.exposed:exposed-java-time", version = "0.49.0" }
 exposed-spring-boot-starter = { module = "org.jetbrains.exposed:exposed-spring-boot-starter", version = "0.49.0" }
 
 [plugins]

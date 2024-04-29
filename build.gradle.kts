@@ -33,7 +33,7 @@ dependencies {
     implementation(libs.spring.boot.starter.thymeleaf)
     implementation(libs.spring.boot.starter.web)
     implementation(libs.spring.boot.starter.test)
-    implementation(libs.exposed.datetime)
+    implementation(libs.exposed.java.time)
     implementation(libs.exposed.spring.boot.starter)
 
     developmentOnly(libs.spring.boot.devtools)
