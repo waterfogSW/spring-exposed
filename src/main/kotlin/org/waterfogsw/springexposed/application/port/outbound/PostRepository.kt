@@ -9,5 +9,6 @@ interface PostRepository {
     fun updateById(id: UUID, post: Post)
     fun findAll(): List<Post>
     fun findById(id: UUID): Post?
+    fun deleteById(id: UUID)
 
 }

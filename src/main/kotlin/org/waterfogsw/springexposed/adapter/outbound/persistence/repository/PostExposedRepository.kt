@@ -1,5 +1,7 @@
 package org.waterfogsw.springexposed.adapter.outbound.persistence.repository
 
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
+import org.jetbrains.exposed.sql.deleteWhere
 import org.jetbrains.exposed.sql.selectAll
 import org.springframework.stereotype.Repository
 import org.waterfogsw.springexposed.adapter.outbound.persistence.table.PostExposedEntity
@@ -45,6 +47,10 @@ class PostExposedRepository : PostRepository {
             .where { PostTable.id eq id }
             .map { PostExposedEntity.wrapRow(it).toDomain() }
             .firstOrNull()
+    }
+
+    override fun deleteById(id: UUID) {
+        PostTable.deleteWhere { PostTable.id eq id }
     }
 
 }

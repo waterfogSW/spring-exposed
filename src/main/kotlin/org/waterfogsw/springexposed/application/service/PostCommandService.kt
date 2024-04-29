@@ -3,6 +3,7 @@ package org.waterfogsw.springexposed.application.service
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import org.waterfogsw.springexposed.application.port.inbound.CreatePost
+import org.waterfogsw.springexposed.application.port.inbound.DeletePost
 import org.waterfogsw.springexposed.application.port.inbound.UpdatePost
 import org.waterfogsw.springexposed.application.port.outbound.PostRepository
 import org.waterfogsw.springexposed.common.exception.NotFoundException
@@ -13,7 +14,7 @@ import java.util.*
 @Transactional
 class PostCommandService(
     private val postRepository: PostRepository,
-) : CreatePost, UpdatePost {
+) : CreatePost, UpdatePost, DeletePost {
 
     override fun create(command: CreatePost.Command) {
         Post
@@ -39,6 +40,10 @@ class PostCommandService(
             ).also {
                 postRepository.updateById(id, it)
             }
+    }
+
+    override fun deleteById(id: UUID) {
+        postRepository.deleteById(id)
     }
 
 }

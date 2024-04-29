@@ -6,3 +6,7 @@ spring:
   exposed:
     show-sql: true
     generate-ddl: true
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true

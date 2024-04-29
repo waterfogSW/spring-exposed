@@ -23,6 +23,10 @@
   </ul>
   <a href="/" class="btn btn-secondary">목록으로</a>
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPostModal">수정</button>
+  <form th:action="@{/posts/{id}(id=${post.id})}" method="post" style="display: inline;">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit" class="btn btn-danger">삭제</button>
+  </form>
 </div>
 
 <!-- 글 수정 모달 -->
@@ -37,6 +41,7 @@
         </button>
       </div>
       <form th:action="@{/posts/{id}(id=${post.id})}" th:object="${post}" method="post">
+        <input type="hidden" name="_method" value="put">
         <div class="modal-body">
           <div class="form-group">
             <label for="title">제목</label>
