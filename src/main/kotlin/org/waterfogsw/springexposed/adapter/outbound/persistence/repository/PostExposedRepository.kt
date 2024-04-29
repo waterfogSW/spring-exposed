@@ -13,7 +13,7 @@ import java.util.*
 @Repository
 class PostExposedRepository : PostRepository {
 
-    override fun save(post: Post) {
+    override fun insert(post: Post) {
         PostExposedEntity
             .new {
                 title = post.title.value

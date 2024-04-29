@@ -22,7 +22,7 @@ class PostCommandService(
                 title = Post.Title(command.title),
                 contents = Post.Contents(command.contents)
             ).also {
-                postRepository.save(it)
+                postRepository.insert(it)
             }
     }
 
