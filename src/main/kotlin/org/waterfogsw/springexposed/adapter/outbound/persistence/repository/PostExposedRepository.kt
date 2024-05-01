@@ -14,26 +14,24 @@ import java.util.*
 class PostExposedRepository : PostRepository {
 
     override fun insert(post: Post) {
-        PostExposedEntity
-            .new {
-                title = post.title.value
-                contents = post.contents.value
-                createdAt = post.createdAt
-                updatedAt = post.updatedAt
-            }
+        PostExposedEntity.new(post.id) {
+            title = post.title.value
+            contents = post.contents.value
+            createdAt = post.createdAt
+            updatedAt = post.updatedAt
+        }
     }
 
     override fun updateById(
         id: UUID,
         post: Post,
     ) {
-        PostExposedEntity
-            .findByIdAndUpdate(id) {
-                it.title = post.title.value
-                it.contents = post.contents.value
-                it.createdAt = post.createdAt
-                it.updatedAt = post.updatedAt
-            }
+        PostExposedEntity.findByIdAndUpdate(id) {
+            it.title = post.title.value
+            it.contents = post.contents.value
+            it.createdAt = post.createdAt
+            it.updatedAt = post.updatedAt
+        }
     }
 
 
